@@ -79,8 +79,8 @@
 				class="relative flex h-full w-full items-center cursor-pointer justify-between px-2"
 			>
 				<div class="flex h-full items-center gap-2">
-					<img src={version.details.url} class="h-full contrast-75 py-1" alt="" />
-					<span>{version.details.name}</span>
+					<img src={version?.details?.url} class="h-full contrast-75 py-1" alt="" />
+					<span>{version?.details?.name}</span>
 				</div>
 				<div class="flex h-full items-center text-textC">
 					{#if isCounting && !totals[version.id]}
