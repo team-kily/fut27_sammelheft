@@ -34,7 +34,7 @@
 		filteredVersions = q
 			? all.filter(v => (v?.details?.name ?? '').toLowerCase().includes(q))
 			: all;
-		filteredVersions.sort((a,b) => new Date(b.details.createdAt) - new Date(a.details.createdAt));
+		filteredVersions.sort((a,b) => new Date(b.details?.createdAt) - new Date(a.details?.createdAt));
 	}
 
 	$: if($versionIndexStore) {
