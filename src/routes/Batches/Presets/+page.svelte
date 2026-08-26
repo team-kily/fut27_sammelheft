@@ -103,3 +103,47 @@
                 }
         }
 </script>
+
+<div class="flex flex-col gap-8">
+	{#if Array.isArray($presetsBatchesStore)}
+		{#each $presetsBatchesStore as batch}
+			{#if batch.allIds.length > 0}
+				<button
+					onclick={() => navToCardsSite('Batches', batch.id)}
+					class="bg-fixed bg-size-[200%] bg-center cursor-pointer"
+					style="background-image: url('https://cdn.easysbc.io/fc26/cards/e_150_0.png');"
+				>
+					<div class="backdrop-blur-xl py-6 px-4 backdrop-brightness-75">
+						<div class="flex justify-between pb-2">
+							<h2 class="text-3xl text-shadow-lg/50 text-white font-bold">
+								{batch.name}
+							</h2>
+
+							<span class="text-3xl text-shadow-lg/50 text-white font-bold">
+								{batch.allIds.length}
+							</span>
+						</div>
+
+						<div class="flex flex-wrap justify-center">
+							{#each batch.highlightedPlayers ?? [] as card, i}
+								<div
+									class="
+										{i >= 4 ? 'hidden lg:flex' : ''}
+										{i >= 2 && i < 4 ? 'hidden md:flex' : ''}
+									"
+								>
+									<RenderedCard
+										{card}
+										displayMode={true}
+										customCardSize={responsiveCardSize}
+										origin="batch"
+									/>
+								</div>
+							{/each}
+						</div>
+					</div>
+				</button>
+			{/if}
+		{/each}
+	{/if}
+</div>
