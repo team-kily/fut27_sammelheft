@@ -22,4 +22,4 @@ class ApiClient {
 	}
 }
 
-export const apiClient = new ApiClient('https://raw.githubusercontent.com/Flo-Kayser/db_futCards/refs/heads/main/db/');
+export const apiClient = new ApiClient('https://raw.githubusercontent.com/Flo-Kayser/db_fut27cards/refs/heads/main/db/');

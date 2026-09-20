@@ -41,7 +41,7 @@
 			<button
 				onclick={() => navToCardsSite('Batches', batch.id)}
 				class="bg-fixed bg-size-[200%] bg-center cursor-pointer"
-				style="background-image: url('https://cdn.easysbc.io/fc26/cards/e_22_0.png');"
+				style="background-image: url('https://cdn.easysbc.io/fc27/cards/e_22_0.png');"
 			>
 				<div class="backdrop-blur-xl py-6 px-4 backdrop-brightness-75">
 					<div class="flex justify-between pb-2">

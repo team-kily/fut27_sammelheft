@@ -8,7 +8,7 @@
 
 	const navItems = [
 		{ href: 'Versions', label: 'Kartenübersicht' },
-		{ href: 'Batches/TOTS', label: 'Batches' },
+		{ href: 'Batches/All', label: 'Batches' },
 		{ href: 'allCardsFrom', label: 'Alle Karten von' },
 		{ href: 'FAQ', label: 'FAQ' },
 		{ href: 'Settings/CardSettings', label: 'Einstellungen' }
@@ -91,7 +91,7 @@
 		activeHref = '/Versions'; 
 	}
 	else if (path.startsWith('/batches')) {
-		activeHref = '/Batches/TOTS';
+		activeHref = '/Batches/All';
 	}
 	else if (path.startsWith('/allCardsFrom')) {
 		activeHref = '/allCardsFrom';

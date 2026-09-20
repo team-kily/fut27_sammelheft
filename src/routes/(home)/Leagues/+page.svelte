@@ -124,16 +124,16 @@
 			>
 				<div class="flex items-center gap-2 md:gap-4 h-full">
 					{#if league.cId === null}
-						<img src="https://cdn.easysbc.io/fc26/clubs/114605.png" class="h-full py-4 contrast-75 hidden md:block" alt="" />
+						<img src="https://cdn.easysbc.io/fc27/clubs/114605.png" class="h-full py-4 contrast-75 hidden md:block" alt="" />
 					{:else}
-						<img src={`https://cdn.easysbc.io/fc26/countries/${league.cId}.png`} class="h-full py-6 hidden md:block" alt="" />
+						<img src={`https://cdn.easysbc.io/fc27/countries/${league.cId}.png`} class="h-full py-6 hidden md:block" alt="" />
 					{/if}
 					<img
-						src={`https://cdn.easysbc.io/fc26/leagues/dark/${league.id}.png`}
+							src={`https://cdn.easysbc.io/fc27/leagues/dark/${league.id}.png`}
 						alt=""
 						class="h-full py-4 contrast-75"
 						on:error={(e) => {
-							e.currentTarget.src = `https://cdn.easysbc.io/fc26/leagues/${league.id}.png`;
+								e.currentTarget.src = `https://cdn.easysbc.io/fc27/leagues/${league.id}.png`;
 							e.currentTarget.onerror = null;
 						}}
 					/>
@@ -167,7 +167,7 @@
 						bind:this={items[i + 60 + j]}
 					>
 						<div class="flex h-full items-center gap-2 px-2">
-							<img src={`https://cdn.easysbc.io/fc26/clubs/${cid.id}.png`} class="h-full contrast-75" alt="" />
+							<img src={`https://cdn.easysbc.io/fc27/clubs/${cid.id}.png`} class="h-full contrast-75" alt="" />
 							<span>{cid.name}</span>
 						</div>
 						<div class="flex gap-1 items-center">

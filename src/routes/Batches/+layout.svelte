@@ -5,7 +5,6 @@
 
 	const navItems = [
 		{ href: '/Batches/All', label: 'Offizielle Batches' },
-		{ href: '/Batches/TOTS', label: 'TOTS' },
 		{ href: '/Batches/TOTW', label: 'Alle TOTWs' },
 		{ href: '/Batches/Presets', label: 'Inoffizielle Batches' }
 

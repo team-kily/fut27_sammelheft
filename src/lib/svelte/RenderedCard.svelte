@@ -16,7 +16,7 @@
 	import { versionIndexStore } from '$lib/stores/sessionStores';
 	import PlayStylesHelper from './Helper/PlayStylesHelper.svelte';
 
-	const fallbackImg = 'https://cdn.easysbc.io/fc26/players/240333.png';
+	const fallbackImg = 'https://cdn.easysbc.io/fc27/players/240333.png';
 	const baseWidth = 180;
 
 	$: cardWidth = origin === 'default' ? $cardSizeStore : customCardSize;
@@ -49,7 +49,7 @@
 	}
 
 	function handleError(e) {
-		e.currentTarget.src = `https://cdn.easysbc.io/fc26/players/${card.assetId}.png`;
+		e.currentTarget.src = `https://cdn.easysbc.io/fc27/players/${card.assetId}.png`;
 	}
 
 	$: primaryColor = version?.details?.primaryColor;
@@ -118,7 +118,7 @@
 			{/if}
 			<!-- Player Image -->
 			<img
-				src={`https://cdn.easysbc.io/fc26/players/${card.resourceId}.png`}
+				src={`https://cdn.easysbc.io/fc27/players/${card.resourceId}.png`}
 				alt=""
 				on:load={checkRealSize}
 				on:error={(e) => {
@@ -147,29 +147,29 @@
 			<!-- Nation Club and League -->
 			<div class="flex gap-1 top-[84.5%] left-1/2 -translate-x-1/2 justify-center items-center">
 				<img
-					src={`https://cdn.easysbc.io/fc26/countries/${card?.countryId}.png`}
+					src={`https://cdn.easysbc.io/fc27/countries/${card?.countryId}.png`}
 					alt="."
 					class="w-4.5 scale-y-[.95] text-[0px]"
 				/>
 				<img
-					src={`https://cdn.easysbc.io/fc26/leagues/dark/${card?.leagueId}.png`}
+					src={`https://cdn.easysbc.io/fc27/leagues/dark/${card?.leagueId}.png`}
 					alt="."
 					class="h-4 text-[0px]"
 					on:error={(e) => {
 						const img = e.currentTarget;
-						img.src = `https://cdn.easysbc.io/fc26/leagues/${card?.leagueId}.png`;
+						img.src = `https://cdn.easysbc.io/fc27/leagues/${card?.leagueId}.png`;
 						img.onerror = null;
 					}}
 				/>
 
 				{#if card?.clubId !== 112658}
 					<img
-						src={`https://cdn.easysbc.io/fc26/clubs/dark/${card?.clubId}.png`}
+						src={`https://cdn.easysbc.io/fc27/clubs/dark/${card?.clubId}.png`}
 						alt="."
 						class="h-4 text-[0px]"
 						on:error={(e) => {
 							const img = e.currentTarget;
-							img.src = `https://cdn.easysbc.io/fc26/clubs/${card?.clubId}.png`;
+							img.src = `https://cdn.easysbc.io/fc27/clubs/${card?.clubId}.png`;
 							img.onerror = null;
 						}}
 					/>
@@ -257,7 +257,7 @@
 			{#if card?.sbcPrice && $cardSettingsStore.showLogosForSBC}
 				<div class="absolute right-2 w-8 top-[84%]">
 					<img
-						src={`https://raw.githubusercontent.com/Flo-Kayser/db_futCards/refs/heads/main/staticData/sbcIcon.png`}
+						src={`https://raw.githubusercontent.com/Flo-Kayser/db_fut27cards/refs/heads/main/staticData/sbcIcon.png`}
 						alt="O"
 					/>
 				</div>
@@ -266,7 +266,7 @@
 			{#if card?.isObjective && $cardSettingsStore.showLogosForSBC}
 				<div class="absolute right-2 w-8 top-[84%]">
 					<img
-						src={`https://raw.githubusercontent.com/Flo-Kayser/db_futCards/refs/heads/main/staticData/objIcon.png`}
+						src={`https://raw.githubusercontent.com/Flo-Kayser/db_fut27cards/refs/heads/main/staticData/objIcon.png`}
 						alt="O"
 					/>
 				</div>

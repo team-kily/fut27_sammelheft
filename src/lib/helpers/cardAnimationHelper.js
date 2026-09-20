@@ -91,7 +91,7 @@ export function collectAnimation(card, btnEl) {
 		.then(() => {
 
 			const audio = new Audio(
-				'https://cdn.jsdelivr.net/gh/Flo-Kayser/db_futCards/staticData/collect.mp3'
+				'https://cdn.jsdelivr.net/gh/Flo-Kayser/db_fut27cards/staticData/collect.mp3'
 			);
 			audio.volume = settings.soundVolume ?? 0.8;
 			audio.play().catch(() => {});

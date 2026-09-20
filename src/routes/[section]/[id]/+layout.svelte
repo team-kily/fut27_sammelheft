@@ -93,17 +93,17 @@
 		section === 'Batches'
 			? (() => {
 					const origin = findBatchOriginById(id);
-					if (origin === 'TOTW') return `https://cdn.easysbc.io/fc26/cards/e_3_0.png`;
-					if (origin === 'TOTS') return `https://cdn.easysbc.io/fc26/cards/e_127_0.png`;
-					if (origin === 'allBatches') return `https://cdn.easysbc.io/fc26/cards/e_22_0.png`;
-					if (origin === 'Presets') return `https://cdn.easysbc.io/fc26/cards/e_150_0.png`;
-					return `https://cdn.easysbc.io/fc26/cards/e_114_0.png`;
+					if (origin === 'TOTW') return `https://cdn.easysbc.io/fc27/cards/e_3_0.png`;
+					if (origin === 'TOTS') return `https://cdn.easysbc.io/fc27/cards/e_127_0.png`;
+					if (origin === 'allBatches') return `https://cdn.easysbc.io/fc27/cards/e_22_0.png`;
+					if (origin === 'Presets') return `https://cdn.easysbc.io/fc27/cards/e_150_0.png`;
+					return `https://cdn.easysbc.io/fc27/cards/e_114_0.png`;
 				})()
 			: section === 'Versions'
 				? $versionIndexStore?.versions?.[id]?.details?.url || ''
 				: id.includes('_')
-					? `https://cdn.easysbc.io/fc26/${section.toLowerCase()}/${id.split('_')[1]}.png`
-					: `https://cdn.easysbc.io/fc26/${section.toLowerCase()}/${id}.png`;
+					? `https://cdn.easysbc.io/fc27/${section.toLowerCase()}/${id.split('_')[1]}.png`
+					: `https://cdn.easysbc.io/fc27/${section.toLowerCase()}/${id}.png`;
 
 	$: title = (() => {
 		if (section === 'Batches') {

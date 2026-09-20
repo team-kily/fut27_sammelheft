@@ -31,7 +31,7 @@
 			['index-data/leaguesIndex.json', leaguesIndexStore],
 			['index-data/resourceMap.json', resourceMapStore],
 			[
-				'https://raw.githubusercontent.com/Flo-Kayser/db_futCards/refs/heads/main/staticData/playStyles.json',
+				'https://raw.githubusercontent.com/Flo-Kayser/db_fut27cards/refs/heads/main/staticData/playStyles.json',
 				playStylesStore
 			]
 		].forEach(([url, store]) => {

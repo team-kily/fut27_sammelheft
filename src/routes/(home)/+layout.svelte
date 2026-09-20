@@ -6,7 +6,7 @@
 </script>
 
 <div class="text-center select-none text-textC contrast-125 font-bold scroll-smooth">
-	<h1 class="font-fl text-2xl md:text-3xl lg:text-5xl my-20 text-white px-4">FUT26 Sammelheft</h1>
+	<h1 class="font-fl text-2xl md:text-3xl lg:text-5xl my-20 text-white px-4">FUT27 Sammelheft</h1>
 
 	<div class="sticky top-36 md:top-30 lg:top-24 w-full justify-center border-b-4 mb-10 pb-5 border-accent px-4 flex">
 		<div class="grid grid-cols-5 w-full md:w-[80vw] text-sm md:text-lg gap-y-4">
