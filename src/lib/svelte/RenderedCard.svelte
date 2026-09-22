@@ -95,12 +95,12 @@
 				<img
 					src={$versionIndexStore?.versions?.[127]?.details?.url}
 					alt="TOTS Champions"
-					class="pointer-events-none absolute w-full"
+					class="pointer-events-none absolute w-full h-full object-fill"
 				/>
 				<img
 					src={version?.details?.url}
 					alt="TOTS"
-					class="mask-diagonal pointer-events-none w-full"
+					class="mask-diagonal pointer-events-none w-full h-full object-fill"
 				/>
 
 			<style>
@@ -114,7 +114,7 @@
           }
 			</style>
 			{:else}
-				<img src={version?.details?.url} class="w-full" alt="" />
+				<img src={version?.details?.url} class="w-full h-full object-fill" alt="" />
 			{/if}
 			<!-- Player Image -->
 			<img
@@ -124,7 +124,7 @@
 				on:error={(e) => {
 					handleError(e);
 				}}
-				class={dynamicPos ? '-top-2.5 left-0' : 'top-2.5 left-5 scale-70'}
+				class={`max-w-full max-h-full object-contain ${dynamicPos ? '-top-2.5 left-0' : 'top-2.5 left-5 scale-70'}`}
 			/>
 			<!-- Rating and Pos -->
 			<div class="top-[18%] left-[15%] flex flex-col items-center -space-y-2 font-b">

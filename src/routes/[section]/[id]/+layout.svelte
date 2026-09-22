@@ -93,6 +93,10 @@
 		section === 'Batches'
 			? (() => {
 					const origin = findBatchOriginById(id);
+					const batchCards = Object.values(cards ?? {});
+					const batchVersionId = batchCards[0]?.versionId;
+					const batchVersionUrl = $versionIndexStore?.versions?.[batchVersionId]?.details?.url;
+					if (batchVersionUrl) return batchVersionUrl;
 					if (origin === 'TOTW') return `https://cdn.easysbc.io/fc27/cards/e_3_0.png`;
 					if (origin === 'TOTS') return `https://cdn.easysbc.io/fc27/cards/e_127_0.png`;
 					if (origin === 'allBatches') return `https://cdn.easysbc.io/fc27/cards/e_22_0.png`;

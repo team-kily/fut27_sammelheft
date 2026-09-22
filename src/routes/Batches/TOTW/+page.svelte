@@ -3,7 +3,7 @@
 	import { browser } from '$app/environment';
 
 	import { onMount } from 'svelte';
-	import { totwIndexStore } from '$lib/stores/sessionStores';
+	import { totwIndexStore, versionIndexStore } from '$lib/stores/sessionStores';
 	import RenderedCard from '$lib/svelte/RenderedCard.svelte';
 	import { collectedCardsStore, impossibleCardsStore } from '$lib/stores/savedStores';
 
@@ -32,6 +32,14 @@
 		const collected = new Set([...$collectedCardsStore, ...$impossibleCardsStore]);
 		return batch.allIds.filter((id) => collected.has(id)).length;
 	}
+
+	function getBatchBackground(batch) {
+		const versionId = batch?.highlightedPlayers?.[0]?.versionId;
+		return (
+			$versionIndexStore?.versions?.[versionId]?.details?.url ??
+			'https://cdn.easysbc.io/fc27/cards/e_3_0.png'
+		);
+	}
 </script>
 
 <div class="flex flex-col gap-8">
@@ -40,7 +48,7 @@
 			<button
 				onclick={() => navToCardsSite('Batches', batch.id)}
 				class="bg-fixed bg-size-[200%] bg-center cursor-pointer"
-				style="background-image: url('https://cdn.easysbc.io/fc27/cards/e_3_0.png');"
+				style={`background-image: url('${getBatchBackground(batch)}');`}
 			>
 				<div class="backdrop-blur-xl py-6 px-4 backdrop-brightness-75">
 					<div class="flex justify-between pb-2">
