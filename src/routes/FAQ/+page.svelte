@@ -2,7 +2,7 @@
 	const faq = [
 		{
 			q: 'Was ist das FUT Sammelheft?',
-			a: 'Das FUT Sammelheft ist eine digitale Sammelalbum für EA Sports FC 26 Ultimate Team. Hier kannst du alle verfügbaren FUT-Karten virtuell sammeln, anzeigen und sortieren – ganz ohne Spielzugriff.'
+			a: 'Das FUT Sammelheft ist eine digitale Sammelalbum für EA Sports FC 27 Ultimate Team. Hier kannst du alle verfügbaren FUT-Karten virtuell sammeln, anzeigen und sortieren – ganz ohne Spielzugriff.'
 		},
 		{
 			q: 'Wie funktioniert das Sammeln von Karten?',

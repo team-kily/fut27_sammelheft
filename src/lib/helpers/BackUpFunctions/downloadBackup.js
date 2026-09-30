@@ -23,7 +23,7 @@ export async function downloadBackup() {
 
 	const a = document.createElement('a');
 	a.href = url;
-	a.download = `fut-26-sammelheft_backup_${timestamp}.json`;
+	a.download = `fut-27-sammelheft_backup_${timestamp}.json`;
 	a.click();
 
 	URL.revokeObjectURL(url);
