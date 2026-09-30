@@ -164,7 +164,7 @@
 				Du hast bereits {collectedPlayerCards.length +
 					impossiblePlayerCards.length}/{playerCards.length}.
 			</p>
-			<div class="flex flex-wrap justify-center">
+			<div class="flex flex-wrap justify-center gap-2">
 				{#each playerCards as card}
 					<button
 						style="cursor: {!$savedStores.allCardsDisplaySwitch ? 'pointer' : 'default'}"

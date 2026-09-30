@@ -124,7 +124,7 @@
 							</span>
 						</div>
 
-						<div class="flex flex-wrap justify-center">
+						<div class="flex flex-wrap justify-center gap-2">
 							{#each batch.highlightedPlayers ?? [] as card, i}
 								<div
 									class="

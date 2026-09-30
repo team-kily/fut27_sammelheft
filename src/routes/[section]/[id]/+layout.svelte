@@ -245,7 +245,7 @@
 
 	$: cardWidth = $cardSizeStore;
 	$: cardHeight = Math.round($cardSizeStore * (400 / 320));
-	let gap = 8;
+	let gap = 20;
 	let containerEl,
 		containerWidth = 0,
 		containerHeight = 0;

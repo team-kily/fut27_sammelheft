@@ -63,7 +63,7 @@
 </script>
 
 {#if card}
-	<div class="card relative" style="width:{cardWidth}px; height:{cardHeight}px;">
+		<div class="card relative overflow-hidden" style="width:{cardWidth}px; height:{cardHeight}px;">
 		{#if isMissed}
 			<div
 				class="z-50 grayscale-0 absolute top-0 left-0 brightness-90 -rotate-10"
@@ -95,12 +95,12 @@
 				<img
 					src={$versionIndexStore?.versions?.[127]?.details?.url}
 					alt="TOTS Champions"
-					class="pointer-events-none absolute w-full h-full object-fill"
+					class="pointer-events-none absolute inset-0 w-full h-full max-w-none origin-center scale-[1.1] object-fill"
 				/>
 				<img
 					src={version?.details?.url}
 					alt="TOTS"
-					class="mask-diagonal pointer-events-none w-full h-full object-fill"
+					class="mask-diagonal pointer-events-none absolute inset-0 w-full h-full max-w-none origin-center scale-[1.1] object-fill"
 				/>
 
 			<style>
@@ -114,7 +114,11 @@
           }
 			</style>
 			{:else}
-				<img src={version?.details?.url} class="w-full h-full object-fill" alt="" />
+				<img
+					src={version?.details?.url}
+					class="absolute inset-0 w-full h-full max-w-none origin-center scale-[1.1] object-fill"
+					alt=""
+				/>
 			{/if}
 			<!-- Player Image -->
 			<img
@@ -124,7 +128,7 @@
 				on:error={(e) => {
 					handleError(e);
 				}}
-				class={`max-w-full max-h-full object-contain ${dynamicPos ? '-top-2.5 left-0' : 'top-2.5 left-5 scale-70'}`}
+				class={dynamicPos ? '-top-2.5 left-0' : 'top-2.5 left-5 scale-70'}
 			/>
 			<!-- Rating and Pos -->
 			<div class="top-[18%] left-[15%] flex flex-col items-center -space-y-2 font-b">
@@ -178,7 +182,7 @@
 			<!-- PlayStyles -->
 			{#if $cardSettingsStore.showPlaystyles}
 				<div
-					class={`absolute left-[4.5%] flex flex-col gap-0.5 ${
+					class={`absolute left-[0%] flex flex-col gap-0.5 ${
 						card?.playStylesPlus?.length === 1
 							? 'top-[54%]'
 							: card?.playStylesPlus?.length === 2
@@ -213,7 +217,7 @@
 			{/if}
 			<!-- Alternative Position -->
 			{#if $cardSettingsStore.showAlternativePositions}
-				<div class="top-[25%] right-[4%] flex flex-col gap-0.75 items-center">
+				<div class="top-[25%] right-[0%] flex flex-col gap-0.75 items-center">
 					{#each card?.possiblePositions.filter((pos) => pos !== card?.preferredPosition) as position}
 						<div
 							style={`color: ${primaryColor}; background-color: ${secondaryColor}`}
@@ -226,7 +230,7 @@
 			{/if}
 			<!-- Weak Foot and Skill Moves -->
 			{#if $cardSettingsStore.showWeakFootAndSkillMoves}
-				<div class="top-[59.5%] right-[4%] flex flex-col gap-0.75 items-center">
+				<div class="top-[59.5%] right-[0%] flex flex-col gap-0.75 items-center">
 					<div
 						style={`color: ${primaryColor}; background-color: ${secondaryColor}`}
 						class="w-5 rounded border items-end flex justify-center text-center text-[7px] p-1 pt-1.25 leading-0 scale-y-125"
