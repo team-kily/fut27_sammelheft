@@ -23,44 +23,49 @@
 
 	onMount(() => {
 		handleScroll(items);
-		filterVersions();
-		requestIdleCallback ? requestIdleCallback(calcTotals) : setTimeout(calcTotals, 100);
-		calcTotals();
 	});
 
-	function filterVersions() {
+	function filterVersions(versions) {
 		const q = ($sessionStore.searchQuery ?? '').toLowerCase().trim();
-		const all = Object.entries($versionIndexStore?.versions ?? {}).map(([id, v]) => ({ ...v, id }));
+		const all = Object.entries(versions).map(([id, v]) => ({ ...v, id }));
 		filteredVersions = q
 			? all.filter(v => (v?.details?.name ?? '').toLowerCase().includes(q))
 			: all;
 		filteredVersions.sort((a,b) => new Date(b.details?.createdAt) - new Date(a.details?.createdAt));
 	}
 
-	$: if($versionIndexStore) {
-		filterVersions();
-		calcTotals()
-	}
-
-	async function calcTotals() {
+	function calcTotals(resourceMap, collected, impossible, missed) {
 		isCounting = true;
-		const rm = $resourceMapStore?.data ?? {};
-		const collected  = new Set($collectedCardsStore);
-		const impossible = new Set($impossibleCardsStore);
-		const missed = new Set($missedCardsStore);
 
+		const collectedSet = new Set(collected);
+		const impossibleSet = new Set(impossible);
+		const missedSet = new Set(missed);
 		const tmp = {};
+
 		for (const v of filteredVersions) {
-			let total = 0, got = 0;
-			for (const [rid, e] of Object.entries(rm)) {
+			let total = 0;
+			let got = 0;
+			for (const [rid, e] of Object.entries(resourceMap)) {
 				if (!e || String(e.v) !== String(v.id)) continue;
 				total++;
-				if (collected.has(+rid) || impossible.has(+rid) || missed.has(+rid)) got++;
+				if (collectedSet.has(+rid) || impossibleSet.has(+rid) || missedSet.has(+rid)) got++;
 			}
 			tmp[v.id] = { total, collected: got };
 		}
+
 		totals = tmp;
 		isCounting = false;
+	}
+
+	$: {
+		const versions = $versionIndexStore?.versions ?? {};
+		const resourceMap = $resourceMapStore?.data ?? {};
+		const collected = $collectedCardsStore;
+		const impossible = $impossibleCardsStore;
+		const missed = $missedCardsStore;
+
+		filterVersions(versions);
+		calcTotals(resourceMap, collected, impossible, missed);
 	}
 </script>
 
